@@ -182,22 +182,34 @@ const containsArr = (arr,int) => {
 
 //console.log(containsArr([1,2,3,4,5],6))
 
-const removeSubArr = (arr1,arr2) => {
-    let part = [];
-    for (let i = 0; i < arr1.length; i++) {
-        if(part.length < arr2.length){
-            part.push(arr1[i])
-        }else{
-            part.push(arr1[i])
-            part.shift()
-
-            if(arr2 == part){
-                console.log("go")
-            }
-        }
-    } 
-
-    return arr1
+const removeSubString = (string1, string2) => {
+    return string1.replace(string2,"");
 }
 
-console.log(removeSubArr([1,2,3,4],[1,2]))
+//console.log(removeSubString("123","12"))
+
+const replaceString = (string1,string2,string3) => {
+    return string1.replace(string2,string3)
+}
+
+//console.log(replaceString("alexander","and","gås"))
+
+const rovarize = (string) => {
+    kons = "bcdfghjklmnpqrstvwxz"
+    for (let i = 0; i < kons.length; i++) {
+        string = string.replace(kons[i],kons[i]+"o"+kons[i])
+    }
+    return string
+}
+
+//console.log(rovarize("alexander"))
+
+const derovarize = (string) => {
+    kons = "bcdfghjklmnpqrstvwxz"
+    for (let i = 0; i < kons.length; i++) {
+        string = string.replace(kons[i]+"o"+kons[i],kons[i])
+    }
+    return string
+}
+
+//console.log(derovarize("alolexoxanondoderor"))
